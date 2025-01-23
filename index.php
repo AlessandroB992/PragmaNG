@@ -1,6 +1,9 @@
 <?php
 session_start();
 
+// Variabile per il messaggio di errore
+$error_message = "";
+
 // Se l'utente è già loggato, reindirizza direttamente alla home
 if (isset($_SESSION['user_id'])) {
     header("Location: home.php");
@@ -20,21 +23,23 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         header("Location: home.php");
         exit();
     } else {
-        echo "Credenziali non valide.";
+        // Imposta il messaggio di errore
+        $error_message = "Credenziali non valide.";
     }
 }
 ?>
 
 <!DOCTYPE html>
 <html lang="it">
+
 <head>
     <?php include('./includes/header.php'); ?>
     <title>Login</title>
 </head>
 
-
 <body>
     <?php include('./includes/navbar.php'); ?>
+
     <!-- Login Form -->
     <div class="loginContainer w-75">
         <div class="row justify-content-center">
@@ -44,8 +49,15 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                         <div class="it-card-header">
                             <h3 class="it-card-title py-4 text-center">Login</h3>
                         </div>
+                        <!-- Mostra il messaggio di errore se presente -->
+                        <?php if ($error_message): ?>
+                            <div class="alert alert-danger alert-dismissible fade show w-75 m-auto" role="alert">
+                                <?php echo $error_message; ?>
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>
+                        <?php endif; ?>
                         <div class="it-card-body p-5">
-                            <form action="login.php" method="POST" class="needs-validation" novalidate>
+                            <form action="index.php" method="POST" class="needs-validation" novalidate>
                                 <div class="form-group">
                                     <label for="email" class="required">Email</label>
                                     <input type="email" class="form-control" id="email" name="email" required>
@@ -70,7 +82,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     </div>
 
     <!-- Bootstrap Italia JS -->
-    <script src="assets/bootstrap-italia/js/bootstrap-italia.bundle.min.js"></script>
+    <script src="/bootstrap-italia/js/bootstrap-italia.bundle.min.js"></script>
 
     <script>
         // Abilita validazione dei form di Bootstrap Italia

@@ -6,17 +6,16 @@ session_start(); // Avvia la sessione
     <?php include('header.php'); ?>
 </head>
 
-
-<nav class="navbar navbar-expand-lg navbar-light bg-light py-3">
+<nav class="navbar navbar-expand-lg py-3">
     <div class="container-fluid">
-        <a class="navbar-brand mx-4 fw-bold" href="#">PRAGMA NEXT GEN LOGO</a>
+        <a class="navbar-brand mx-4 fw-bold" href="#">PragmaNG LOGO</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav me-auto">
                 <li class="nav-item">
-                    <a class="btn btn-primary p-2 mx-1" href="<?php echo isset($_SESSION['user_id']) ? 'home.php' : 'login.php'; ?>">Home</a>
+                    <a class="btn btn-primary p-2 mx-1" href="<?php echo isset($_SESSION['user_id']) ? 'home.php' : 'index.php'; ?>">Home</a>
                 </li>
 
                 <!-- Link "Gestione Convenzionati" visibile solo se l'utente è loggato -->
@@ -30,15 +29,15 @@ session_start(); // Avvia la sessione
                             Flusso M <svg class="icon icon-white icon-xs"><use href="/bootstrap-italia/svg/sprites.svg#it-expand"></use></svg>
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">Caricamento Flusso M</a></li>
-                            <li><a class="dropdown-item" href="#">Approva Flussi M</a></li>
-                            <li><a class="dropdown-item" href="#">Situazione Flussi M</a></li>
-                            <li><a class="dropdown-item" href="#">Liquida Flussi M</a></li>
-                            <li><a class="dropdown-item" href="#">Approva Liquidazioni</a></li>
-                            <li><a class="dropdown-item" href="#">Pubblica Liquidazioni</a></li>
-                            <li><a class="dropdown-item" href="#">Approva Ruolo</a></li>
-                            <li><a class="dropdown-item" href="#">Ricette</a></li>
-                            <li><a class="dropdown-item" href="#">Reportistica</a></li>
+                            <li><a class="dropdown-item py-1" href="#">Caricamento Flusso M</a></li>
+                            <li><a class="dropdown-item py-1" href="#">Approva Flussi M</a></li>
+                            <li><a class="dropdown-item py-1" href="#">Situazione Flussi M</a></li>
+                            <li><a class="dropdown-item py-1" href="#">Liquida Flussi M</a></li>
+                            <li><a class="dropdown-item py-1" href="#">Approva Liquidazioni</a></li>
+                            <li><a class="dropdown-item py-1" href="#">Pubblica Liquidazioni</a></li>
+                            <li><a class="dropdown-item py-1" href="#">Approva Ruolo</a></li>
+                            <li><a class="dropdown-item py-1" href="#">Ricette</a></li>
+                            <li><a class="dropdown-item py-1" href="#">Reportistica</a></li>
                         </ul>
                     </li>
                     <!-- Dropdown "Gestione Utenti" -->
@@ -47,33 +46,33 @@ session_start(); // Avvia la sessione
                             Gestione Utenti <svg class="icon icon-white icon-xs"><use href="/bootstrap-italia/svg/sprites.svg#it-expand"></use></svg>
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">Lista Utenti</a></li>
-                            <li><a class="dropdown-item" href="#">Aggiungi Utente</a></li>
+                            <li><a class="dropdown-item py-1" href="#">Lista Utenti</a></li>
+                            <li><a class="dropdown-item py-1" href="#">Aggiungi Utente</a></li>
                         </ul>
                     </li>
-                    <!-- Dropdown "Gestione Utenti" -->
+                    <!-- Dropdown "Gestione Tabelle" -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle btn btn-primary p-2 mx-1 text-white fw-bold" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Gestione Tabelle <svg class="icon icon-white icon-xs"><use href="/bootstrap-italia/svg/sprites.svg#it-expand"></use></svg>
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">Tabella Nazioni</a></li>
-                            <li><a class="dropdown-item" href="#">Tabella Regioni</a></li>
-                            <li><a class="dropdown-item" href="#">Tabella Province</a></li>
-                            <li><a class="dropdown-item" href="#">Tabella Comuni</a></li>
-                            <li><a class="dropdown-item" href="#">Tabella A.S.L.</a></li>
-                            <li><a class="dropdown-item" href="#">Tabella Distretti</a></li>
+                            <li><a class="dropdown-item py-1" href="#">Tabella Nazioni</a></li>
+                            <li><a class="dropdown-item py-1" href="#">Tabella Regioni</a></li>
+                            <li><a class="dropdown-item py-1" href="#">Tabella Province</a></li>
+                            <li><a class="dropdown-item py-1" href="#">Tabella Comuni</a></li>
+                            <li><a class="dropdown-item py-1" href="#">Tabella A.S.L.</a></li>
+                            <li><a class="dropdown-item py-1" href="#">Tabella Distretti</a></li>
                             <hr>
-                            <li><a class="dropdown-item" href="#">Tabella Medici</a></li>
-                            <li><a class="dropdown-item" href="#">Tabella Branche</a></li>
-                            <li><a class="dropdown-item" href="#">Tabella Diagnosi</a></li>
-                            <li><a class="dropdown-item" href="#">Tabella Esenzioni</a></li>
-                            <li><a class="dropdown-item" href="#">Tabella Prestazioni</a></li>
-                            <li><a class="dropdown-item" href="#">Tabella Tariffe</a></li>
-                            <li><a class="dropdown-item" href="#">Tabella Causali</a></li>
+                            <li><a class="dropdown-item py-1" href="#">Tabella Medici</a></li>
+                            <li><a class="dropdown-item py-1" href="#">Tabella Branche</a></li>
+                            <li><a class="dropdown-item py-1" href="#">Tabella Diagnosi</a></li>
+                            <li><a class="dropdown-item py-1" href="#">Tabella Esenzioni</a></li>
+                            <li><a class="dropdown-item py-1" href="#">Tabella Prestazioni</a></li>
+                            <li><a class="dropdown-item py-1" href="#">Tabella Tariffe</a></li>
+                            <li><a class="dropdown-item py-1" href="#">Tabella Causali</a></li>
                             <hr>
-                            <li><a class="dropdown-item" href="#">Tabella Errori</a></li>
-                            <li><a class="dropdown-item" href="#">Tabella News</a></li>
+                            <li><a class="dropdown-item py-1" href="#">Tabella Errori</a></li>
+                            <li><a class="dropdown-item py-1" href="#">Tabella News</a></li>
                         </ul>
                     </li>
                     <!-- Dropdown "Supporto" -->
@@ -82,24 +81,26 @@ session_start(); // Avvia la sessione
                             Supporto <svg class="icon icon-white icon-xs"><use href="/bootstrap-italia/svg/sprites.svg#it-expand"></use></svg>
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">Download Utili</a></li>
-                            <li><a class="dropdown-item" href="#">Contatti</a></li>
-                            <li><a class="dropdown-item" href="#">Cambio Password</a></li>
+                            <li><a class="dropdown-item py-1" href="#">Download Utili</a></li>
+                            <li><a class="dropdown-item py-1" href="#">Contatti</a></li>
+                            <li><a class="dropdown-item py-1" href="#">Cambio Password</a></li>
                         </ul>
                     </li>
                 <?php endif; ?>
-
-
             </ul>
 
-            <ul class="navbar-nav ms-auto">
+            <ul class="navbar-nav ms-auto d-flex align-items-center">
                 <?php if (isset($_SESSION['user_id'])): ?>
+                    <!-- Mostra il nome utente e il logout -->
+                    <li class="nav-item">
+                        <span class="navbar-text mx-2"><?php echo $_SESSION['user_id']; ?></span>
+                    </li>
                     <li class="nav-item">
                         <a class="btn btn-danger p-2 mx-1" href="logout.php">Logout</a>
                     </li>
                 <?php else: ?>
                     <li class="nav-item">
-                        <a class="btn btn-primary p-2 mx-1" href="login.php">Login</a>
+                        <a class="btn btn-primary p-2 mx-1" href="index.php">Login</a>
                     </li>
                 <?php endif; ?>
             </ul>
@@ -108,4 +109,4 @@ session_start(); // Avvia la sessione
 </nav>
 
 <!-- Bootstrap Italia JS -->
-<script src="assets/bootstrap-italia/js/bootstrap-italia.bundle.min.js"></script>
+<script src="bootstrap-italia/js/bootstrap-italia.bundle.min.js"></script>

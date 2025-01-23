@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!isset($_SESSION['user_id'])) {
-    header("Location: login.php");
+    header("Location: index.php");
     exit();
 }
 ?>
@@ -16,9 +16,8 @@ if (!isset($_SESSION['user_id'])) {
 
 <body>
     <?php include('./includes/navbar.php'); ?>
-    <div class="container my-5">
-        <h1>Benvenuto nella pagina Home</h1>
-        <p>Questa è una semplice pagina di esempio.</p>
+    <div class="banner py-5 text-center">
+        <h1>Portale Gestione del Flusso M</h1>
     </div>
 </body>
 
