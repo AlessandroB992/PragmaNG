@@ -27,18 +27,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
 <!DOCTYPE html>
 <html lang="it">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <?php include('./includes/header.php'); ?>
     <title>Login</title>
-    <!-- Bootstrap Italia CSS -->
-    <link rel="stylesheet" href="assets/bootstrap-italia/css/bootstrap-italia.min.css">
-    <link rel="stylesheet" href="styles.css">
 </head>
 
+
 <body>
-    <?php include('navbar.php'); ?>
+    <?php include('./includes/navbar.php'); ?>
     <!-- Login Form -->
     <div class="loginContainer w-75">
         <div class="row justify-content-center">
