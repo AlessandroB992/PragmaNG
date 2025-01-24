@@ -1,10 +1,6 @@
 body {
-    background-color: #ffffff;
+    background-color: #cde3f9;
     font-family: 'Titillium Web', sans-serif;
-}
-
-.navbar{
-    background-color: rgb(225, 225, 225);
 }
 
 .loginContainer {
@@ -17,10 +13,19 @@ body {
     background: rgb(255, 255, 255);
     border: none;
 }
+.logo{
+    background-color: black;
+    padding: 3rem 0;
+}
 
-.banner{
-    margin: 80px 10px;
-    background-color: rgb(200, 200, 200);
-    -webkit-box-shadow: 5px 5px 9px 0px rgba(0, 0, 0, 0.45);
-    box-shadow: 5px 5px 9px 0px rgba(0, 0, 0, 0.45);
+.sideOptions{
+    padding: 3rem 0;
+}
+
+.logout{
+    padding: 3rem 0;
+}
+
+.table{
+    background-color: white;
 }

@@ -15,9 +15,13 @@ if (!isset($_SESSION['user_id'])) {
 </head>
 
 <body>
-    <?php include('./includes/navbar.php'); ?>
-    <div class="banner py-5 text-center">
-        <h1>Portale Gestione del Flusso M</h1>
+    <div class="d-flex">
+        <?php include('./includes/sidebar.php'); ?>
+        <div class="d-flex flex-column m-auto">
+            <h1 class="p-5 m-0 border-bottom border-2">Portale Gestione del Flusso M</h1>
+            <img src="https://www.asptrapani.it/immagini/logo/logo-ente.png" alt="">
+        </div>
+
     </div>
 </body>
 

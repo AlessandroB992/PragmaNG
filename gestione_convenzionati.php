@@ -94,7 +94,7 @@ $total_pages = ceil($total_rows / $rows_per_page);
 
         <!-- Paginazione -->
         <nav aria-label="Page navigation">
-            <ul class="pagination justify-content-center mt-4">
+            <ul class="pagination justify-content-center mt-4 rounded-2 bg-white">
                 <li class="page-item <?php if ($page == 1) echo 'disabled'; ?>">
                     <a class="page-link" href="gestione_convenzionati.php?page=<?php echo $page - 1; ?>" aria-label="Previous">
                         <span aria-hidden="true">&laquo;</span>
