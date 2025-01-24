@@ -46,22 +46,22 @@ session_start(); // Avvia la sessione
 <!-- Modali -->
 <div class="modal fade" id="flussoMModal" tabindex="-1" aria-labelledby="flussoMModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-scrollable">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="flussoMModalLabel">Flusso M</h5>
+        <div class="modal-content rounded-3">
+            <div class="modal-header bg-primary p-4">
+                <h5 class="modal-title text-white" id="flussoMModalLabel">Flusso M</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <ul class="list-unstyled">
-                    <li><a href="#" class="d-block text-primary">Caricamento Flusso M</a></li>
-                    <li><a href="#" class="d-block text-primary">Approva Flussi M</a></li>
-                    <li><a href="#" class="d-block text-primary">Situazione Flussi M</a></li>
-                    <li><a href="#" class="d-block text-primary">Liquida Flussi M</a></li>
-                    <li><a href="#" class="d-block text-primary">Approva Liquidazioni</a></li>
-                    <li><a href="#" class="d-block text-primary">Pubblica Liquidazioni</a></li>
-                    <li><a href="#" class="d-block text-primary">Approva Ruolo</a></li>
-                    <li><a href="#" class="d-block text-primary">Ricette</a></li>
-                    <li><a href="#" class="d-block text-primary">Reportistica</a></li>
+                    <li><a href="#" class="d-block text-dark text-decoration-none pb-2 border-bottom border-1">Caricamento Flusso M</a></li>
+                    <li><a href="#" class="d-block text-dark text-decoration-none pb-2 border-bottom border-1">Approva Flussi M</a></li>
+                    <li><a href="#" class="d-block text-dark text-decoration-none pb-2 border-bottom border-1">Situazione Flussi M</a></li>
+                    <li><a href="#" class="d-block text-dark text-decoration-none pb-2 border-bottom border-1">Liquida Flussi M</a></li>
+                    <li><a href="#" class="d-block text-dark text-decoration-none pb-2 border-bottom border-1">Approva Liquidazioni</a></li>
+                    <li><a href="#" class="d-block text-dark text-decoration-none pb-2 border-bottom border-1">Pubblica Liquidazioni</a></li>
+                    <li><a href="#" class="d-block text-dark text-decoration-none pb-2 border-bottom border-1">Approva Ruolo</a></li>
+                    <li><a href="#" class="d-block text-dark text-decoration-none pb-2 border-bottom border-1">Ricette</a></li>
+                    <li><a href="#" class="d-block text-dark text-decoration-none pb-2">Reportistica</a></li>
                 </ul>
             </div>
         </div>
@@ -70,15 +70,15 @@ session_start(); // Avvia la sessione
 
 <div class="modal fade" id="gestioneUtentiModal" tabindex="-1" aria-labelledby="gestioneUtentiModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-scrollable">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="gestioneUtentiModalLabel">Gestione Utenti</h5>
+        <div class="modal-content rounded-3">
+            <div class="modal-header bg-primary p-4">
+                <h5 class="modal-title text-white" id="gestioneUtentiModalLabel">Gestione Utenti</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <ul class="list-unstyled">
-                    <li><a href="#" class="d-block text-primary">Lista Utenti</a></li>
-                    <li><a href="#" class="d-block text-primary">Aggiungi Utente</a></li>
+                    <li><a href="#" class="d-block text-dark text-decoration-none pb-2 border-bottom border-1">Lista Utenti</a></li>
+                    <li><a href="#" class="d-block text-dark text-decoration-none pb-2">Aggiungi Utente</a></li>
                 </ul>
             </div>
         </div>
@@ -87,21 +87,21 @@ session_start(); // Avvia la sessione
 
 <div class="modal fade" id="gestioneTabelleModal" tabindex="-1" aria-labelledby="gestioneTabelleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-scrollable">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="gestioneTabelleModalLabel">Gestione Tabelle</h5>
+        <div class="modal-content rounded-3">
+            <div class="modal-header bg-primary p-4">
+                <h5 class="modal-title text-white" id="gestioneTabelleModalLabel">Gestione Tabelle</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <ul class="list-unstyled">
-                    <li><a href="#" class="d-block text-primary">Tabella Nazioni</a></li>
-                    <li><a href="#" class="d-block text-primary">Tabella Regioni</a></li>
-                    <li><a href="#" class="d-block text-primary">Tabella Province</a></li>
-                    <li><a href="#" class="d-block text-primary">Tabella Comuni</a></li>
-                    <li><a href="#" class="d-block text-primary">Tabella A.S.L.</a></li>
-                    <li><a href="#" class="d-block text-primary">Tabella Distretti</a></li>
-                    <li><a href="#" class="d-block text-primary">Tabella Medici</a></li>
-                    <li><a href="#" class="d-block text-primary">Tabella Branche</a></li>
+                    <li><a href="#" class="d-block text-dark text-decoration-none pb-2 border-bottom border-1">Tabella Nazioni</a></li>
+                    <li><a href="#" class="d-block text-dark text-decoration-none pb-2 border-bottom border-1">Tabella Regioni</a></li>
+                    <li><a href="#" class="d-block text-dark text-decoration-none pb-2 border-bottom border-1">Tabella Province</a></li>
+                    <li><a href="#" class="d-block text-dark text-decoration-none pb-2 border-bottom border-1">Tabella Comuni</a></li>
+                    <li><a href="#" class="d-block text-dark text-decoration-none pb-2 border-bottom border-1">Tabella A.S.L.</a></li>
+                    <li><a href="#" class="d-block text-dark text-decoration-none pb-2 border-bottom border-1">Tabella Distretti</a></li>
+                    <li><a href="#" class="d-block text-dark text-decoration-none pb-2 border-bottom border-1">Tabella Medici</a></li>
+                    <li><a href="#" class="d-block text-dark text-decoration-none pb-2">Tabella Branche</a></li>
                 </ul>
             </div>
         </div>
@@ -110,16 +110,16 @@ session_start(); // Avvia la sessione
 
 <div class="modal fade" id="supportoModal" tabindex="-1" aria-labelledby="supportoModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-scrollable">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="supportoModalLabel">Supporto</h5>
+        <div class="modal-content rounded-3">
+            <div class="modal-header bg-primary p-4">
+                <h5 class="modal-title text-white" id="supportoModalLabel">Supporto</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <ul class="list-unstyled">
-                    <li><a href="#" class="d-block text-primary">Download Utili</a></li>
-                    <li><a href="#" class="d-block text-primary">Contatti</a></li>
-                    <li><a href="#" class="d-block text-primary">Cambio Password</a></li>
+                    <li><a href="#" class="d-block text-dark text-decoration-none pb-2 border-bottom border-1">Download Utili</a></li>
+                    <li><a href="#" class="d-block text-dark text-decoration-none pb-2 border-bottom border-1">Contatti</a></li>
+                    <li><a href="#" class="d-block text-dark text-decoration-none pb-2">Cambio Password</a></li>
                 </ul>
             </div>
         </div>
