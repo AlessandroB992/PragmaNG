@@ -3,32 +3,32 @@ session_start(); // Avvia la sessione
 ?>
 <div class="d-flex">
     <!-- Sidebar -->
-    <nav class="sidebar bg-white flex-column vh-100 p-3">
+    <nav class="sidebar flex-column vh-100 p-3">
         <div class="logo text-center">
-            <a class="navbar-brand fw-bold  text-white" href="#">PragmaNG LOGO</a>
+            <a class="navbar-brand fw-bold text-white" href="#">PragmaNG LOGO</a>
         </div>
         <ul class="sideOptions nav flex-column">
             <li class="nav-item mb-2">
-                <a class="btn btn-primary w-100 text-start" href="<?php echo isset($_SESSION['user_id']) ? 'home.php' : 'index.php'; ?>">Home</a>
+                <a class="btn btn-light w-100 text-start" href="<?php echo isset($_SESSION['user_id']) ? 'home.php' : 'index.php'; ?>">Home</a>
             </li>
 
             <?php if (isset($_SESSION['user_id'])): ?>
                 <li class="nav-item mb-2">
-                    <a class="btn btn-primary w-100 text-start" href="gestione_convenzionati.php">Gestione Convenzionati</a>
+                    <a class="btn btn-light w-100 text-start" href="./convenzionati/gestione_convenzionati.php">Gestione Convenzionati</a>
                 </li>
 
                 <!-- Dropdown con modali -->
                 <li class="nav-item mb-2">
-                    <button class="btn btn-primary w-100 text-start" data-bs-toggle="modal" data-bs-target="#flussoMModal">Flusso M</button>
+                    <button class="btn btn-light w-100 text-start" data-bs-toggle="modal" data-bs-target="#flussoMModal">Flusso M</button>
                 </li>
                 <li class="nav-item mb-2">
-                    <button class="btn btn-primary w-100 text-start" data-bs-toggle="modal" data-bs-target="#gestioneUtentiModal">Gestione Utenti</button>
+                    <button class="btn btn-light w-100 text-start" data-bs-toggle="modal" data-bs-target="#gestioneUtentiModal">Gestione Utenti</button>
                 </li>
                 <li class="nav-item mb-2">
-                    <button class="btn btn-primary w-100 text-start" data-bs-toggle="modal" data-bs-target="#gestioneTabelleModal">Gestione Tabelle</button>
+                    <button class="btn btn-light w-100 text-start" data-bs-toggle="modal" data-bs-target="#gestioneTabelleModal">Gestione Tabelle</button>
                 </li>
                 <li class="nav-item mb-2">
-                    <button class="btn btn-primary w-100 text-start" data-bs-toggle="modal" data-bs-target="#supportoModal">Supporto</button>
+                    <button class="btn btn-light w-100 text-start" data-bs-toggle="modal" data-bs-target="#supportoModal">Supporto</button>
                 </li>
             <?php endif; ?>
         </ul>
@@ -36,7 +36,7 @@ session_start(); // Avvia la sessione
         <!-- User ID e Logout in fondo -->
         <?php if (isset($_SESSION['user_id'])): ?>
             <div class="logout d-flex flex-column">
-                <span class="d-block text-secondary text-center my-2"><?php echo $_SESSION['user_id']; ?></span>
+                <span class="d-block text-secondary text-center text-white my-2"><?php echo $_SESSION['user_id']; ?></span>
                 <a class="btn btn-danger w-100" href="logout.php">Logout</a>
             </div>
         <?php endif; ?>
@@ -47,8 +47,8 @@ session_start(); // Avvia la sessione
 <div class="modal fade" id="flussoMModal" tabindex="-1" aria-labelledby="flussoMModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-scrollable">
         <div class="modal-content rounded-3">
-            <div class="modal-header bg-primary p-4">
-                <h5 class="modal-title text-white" id="flussoMModalLabel">Flusso M</h5>
+            <div class="modal-header bg-info p-4">
+                <h5 class="modal-title text-light" id="flussoMModalLabel">Flusso M</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -71,8 +71,8 @@ session_start(); // Avvia la sessione
 <div class="modal fade" id="gestioneUtentiModal" tabindex="-1" aria-labelledby="gestioneUtentiModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-scrollable">
         <div class="modal-content rounded-3">
-            <div class="modal-header bg-primary p-4">
-                <h5 class="modal-title text-white" id="gestioneUtentiModalLabel">Gestione Utenti</h5>
+            <div class="modal-header bg-info p-4">
+                <h5 class="modal-title text-light" id="gestioneUtentiModalLabel">Gestione Utenti</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -88,8 +88,8 @@ session_start(); // Avvia la sessione
 <div class="modal fade" id="gestioneTabelleModal" tabindex="-1" aria-labelledby="gestioneTabelleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-scrollable">
         <div class="modal-content rounded-3">
-            <div class="modal-header bg-primary p-4">
-                <h5 class="modal-title text-white" id="gestioneTabelleModalLabel">Gestione Tabelle</h5>
+            <div class="modal-header bg-info p-4">
+                <h5 class="modal-title text-light" id="gestioneTabelleModalLabel">Gestione Tabelle</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -111,8 +111,8 @@ session_start(); // Avvia la sessione
 <div class="modal fade" id="supportoModal" tabindex="-1" aria-labelledby="supportoModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-scrollable">
         <div class="modal-content rounded-3">
-            <div class="modal-header bg-primary p-4">
-                <h5 class="modal-title text-white" id="supportoModalLabel">Supporto</h5>
+            <div class="modal-header bg-info p-4">
+                <h5 class="modal-title text-light" id="supportoModalLabel">Supporto</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">

@@ -7,7 +7,7 @@ if (!isset($_SESSION['user_id'])) {
     exit();
 }
 
-include 'includes/db_connection.php';
+include '../../includes/db_connection.php';
 
 // Query per ottenere il convenzionato
 $id = isset($_GET['id']) ? intval($_GET['id']) : 0;
@@ -72,12 +72,12 @@ $convenzioni_result = $conn->query($convenzioni_sql);
 <html lang="it">
 
 <head>
-    <?php include './includes/header.php'; ?>
+    <?php include '../../includes/header.php'; ?>
     <title><?php echo htmlspecialchars($row['denominazione']); ?></title>
 </head>
 
 <body>
-    <?php include './includes/navbar.php'; ?>
+    <?php include '../../includes/navbar.php'; ?>
 
     <h2 class="text-center py-5 m-0 text-white" style="background-color: #17334F;"><?php echo htmlspecialchars($row['denominazione']); ?></h2>
     <div class="container my-4">

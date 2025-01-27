@@ -7,7 +7,7 @@ if (!isset($_SESSION['user_id'])) {
     exit();
 }
 
-include 'includes/db_connection.php';
+include '../includes/db_connection.php';
 
 // Imposta il numero di righe per pagina
 $rows_per_page = 9; // Impostato su 9, come desiderato
@@ -52,11 +52,11 @@ $total_pages = ceil($total_rows / $rows_per_page); // Calcolo del numero totale 
 <!DOCTYPE html>
 <html lang="it">
 <head>
-    <?php include './includes/header.php'; ?>
+    <?php include '../includes/header.php'; ?>
     <title>Gestione Convenzionati</title>
 </head>
 <body>
-    <?php include './includes/navbar.php'; ?>
+    <?php include '../includes/navbar.php'; ?>
 
     <h2 class="text-center py-5 m-0 text-white" style="background-color: #17334F;">Anagrafiche Struttura Erogatrice</h2>
     <div class="container mt-4">
@@ -154,8 +154,8 @@ $total_pages = ceil($total_rows / $rows_per_page); // Calcolo del numero totale 
             <!-- Pulsanti CRUD -->
             <div class="d-flex justify-content-center align-items-center gap-2">
                 <button class="btn btn-info" onclick="visualizza()">Visualizza</button>
-                <button class="btn btn-success" onclick="window.location.href='inserisci.php'">Inserisci</button>
-                <button class="btn btn-warning" onclick="modifica()">Modifica</button>
+                <button class="btn btn-success" onclick="window.location.href='options/inserisci.php'">Inserisci</button>
+                <button class="btn btn-primary" onclick="modifica()">Modifica</button>
                 <button class="btn btn-danger" onclick="cancella()">Cancella</button>
             </div>
         </div>
@@ -166,18 +166,18 @@ $total_pages = ceil($total_rows / $rows_per_page); // Calcolo del numero totale 
         function visualizza() {
             const selectedRow = document.querySelector('input[name="selected_row"]:checked');
             if (selectedRow) {
-                window.location.href = `visualizza.php?id=${selectedRow.value}`;
+                window.location.href = `options/visualizza.php?id=${selectedRow.value}`;
             } else {
-                alert("Seleziona una riga per visualizzare.");
+                alert("Seleziona la per visualizzare.");
             }
         }
 
         function modifica() {
             const selectedRow = document.querySelector('input[name="selected_row"]:checked');
             if (selectedRow) {
-                window.location.href = `modifica.php?id=${selectedRow.value}`;
+                window.location.href = `options/modifica.php?id=${selectedRow.value}`;
             } else {
-                alert("Seleziona una riga per modificare.");
+                alert("Seleziona la riga da modificare.");
             }
         }
 

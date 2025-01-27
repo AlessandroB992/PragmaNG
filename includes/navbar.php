@@ -3,30 +3,30 @@ session_start(); // Avvia la sessione
 ?>
 
 <head>
-    <?php include('header.php'); ?>
+    <?php include('../includes/header.php'); ?>
 </head>
 
-<nav class="navbar navbar-expand-lg bg-white py-3">
+<nav class="navbar navbar-expand-lg py-3">
     <div class="container-fluid">
-        <a class="navbar-brand mx-4 fw-bold" href="#">PragmaNG LOGO</a>
+        <a class="navbar-brand mx-4 fw-bold text-white" href="#">PragmaNG LOGO</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav me-auto">
                 <li class="nav-item">
-                    <a class="btn btn-primary p-2 mx-1" href="<?php echo isset($_SESSION['user_id']) ? 'home.php' : 'index.php'; ?>">Home</a>
+                    <a class="btn btn-light p-2 mx-1" href="<?php echo isset($_SESSION['user_id']) ? '/home.php' : '/index.php'; ?>">Home</a>
                 </li>
 
                 <!-- Link "Gestione Convenzionati" visibile solo se l'utente è loggato -->
                 <?php if (isset($_SESSION['user_id'])): ?>
                     <li class="nav-item">
-                        <a class="btn btn-primary p-2 mx-1" href="gestione_convenzionati.php">Gestione Convenzionati</a>
+                        <a class="btn btn-light p-2 mx-1" href="/convenzionati/gestione_convenzionati.php">Gestione Convenzionati</a>
                     </li>
                     <!-- Dropdown "Flusso M" -->
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle btn btn-primary p-2 mx-1 text-white fw-bold" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Flusso M <svg class="icon icon-white icon-xs"><use href="/bootstrap-italia/svg/sprites.svg#it-expand"></use></svg>
+                        <a class="nav-link dropdown-toggle btn btn-light p-2 mx-1 fw-bold text-black" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Flusso M <svg class="icon icon-black icon-xs"><use href="/bootstrap-italia/svg/sprites.svg#it-expand"></use></svg>
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item py-1" href="#">Caricamento Flusso M</a></li>
@@ -42,8 +42,8 @@ session_start(); // Avvia la sessione
                     </li>
                     <!-- Dropdown "Gestione Utenti" -->
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle btn btn-primary p-2 mx-1 text-white fw-bold" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Gestione Utenti <svg class="icon icon-white icon-xs"><use href="/bootstrap-italia/svg/sprites.svg#it-expand"></use></svg>
+                        <a class="nav-link dropdown-toggle btn btn-light p-2 mx-1 fw-bold text-black" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Gestione Utenti <svg class="icon icon-black icon-xs"><use href="/bootstrap-italia/svg/sprites.svg#it-expand"></use></svg>
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item py-1" href="#">Lista Utenti</a></li>
@@ -52,8 +52,8 @@ session_start(); // Avvia la sessione
                     </li>
                     <!-- Dropdown "Gestione Tabelle" -->
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle btn btn-primary p-2 mx-1 text-white fw-bold" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Gestione Tabelle <svg class="icon icon-white icon-xs"><use href="/bootstrap-italia/svg/sprites.svg#it-expand"></use></svg>
+                        <a class="nav-link dropdown-toggle btn btn-light p-2 mx-1 fw-bold text-black" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Gestione Tabelle <svg class="icon icon-black icon-xs"><use href="/bootstrap-italia/svg/sprites.svg#it-expand"></use></svg>
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item py-1" href="#">Tabella Nazioni</a></li>
@@ -77,8 +77,8 @@ session_start(); // Avvia la sessione
                     </li>
                     <!-- Dropdown "Supporto" -->
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle btn btn-primary p-2 mx-1 text-white fw-bold" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Supporto <svg class="icon icon-white icon-xs"><use href="/bootstrap-italia/svg/sprites.svg#it-expand"></use></svg>
+                        <a class="nav-link dropdown-toggle btn btn-light p-2 mx-1 fw-bold text-black" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Supporto <svg class="icon icon-black icon-xs"><use href="/bootstrap-italia/svg/sprites.svg#it-expand"></use></svg>
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item py-1" href="#">Download Utili</a></li>
@@ -93,14 +93,14 @@ session_start(); // Avvia la sessione
                 <?php if (isset($_SESSION['user_id'])): ?>
                     <!-- Mostra il nome utente e il logout -->
                     <li class="nav-item">
-                        <span class="navbar-text mx-2"><?php echo $_SESSION['user_id']; ?></span>
+                        <span class="navbar-text text-white mx-2"><?php echo $_SESSION['user_id']; ?></span>
                     </li>
                     <li class="nav-item">
-                        <a class="btn btn-danger p-2 mx-1" href="logout.php">Logout</a>
+                        <a class="btn btn-danger p-2 mx-1" href="../../logout.php">Logout</a>
                     </li>
                 <?php else: ?>
                     <li class="nav-item">
-                        <a class="btn btn-primary p-2 mx-1" href="index.php">Login</a>
+                        <a class="btn btn-light p-2 mx-1" href="../../index.php">Login</a>
                     </li>
                 <?php endif; ?>
             </ul>
@@ -109,4 +109,4 @@ session_start(); // Avvia la sessione
 </nav>
 
 <!-- Bootstrap Italia JS -->
-<script src="bootstrap-italia/js/bootstrap-italia.bundle.min.js"></script>
+<script src="/bootstrap-italia/js/bootstrap-italia.bundle.min.js"></script>
