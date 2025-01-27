@@ -33,12 +33,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 <html lang="it">
 
 <head>
-    <?php include('./includes/header.php'); ?>
+    <?php include './includes/header.php'; ?>
     <title>Login</title>
 </head>
 
 <body>
-    <?php include('./includes/navbar.php'); ?>
+    <?php include './includes/navbar.php'; ?>
 
     <!-- Login Form -->
     <div class="loginContainer w-75">

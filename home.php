@@ -10,7 +10,7 @@ if (!isset($_SESSION['user_id'])) {
 <html lang="it">
 
 <head>
-    <?php include('./includes/header.php'); ?>
+    <?php include './includes/header.php'; ?>
     <title>Home</title>
 </head>
 

@@ -7,38 +7,56 @@ if (!isset($_SESSION['user_id'])) {
     exit();
 }
 
-include('includes/db_connection.php');
+include 'includes/db_connection.php';
 
 // Imposta il numero di righe per pagina
-$rows_per_page = 10;
+$rows_per_page = 9; // Impostato su 9, come desiderato
 
 // Recupera il numero della pagina corrente
 $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
 $start_from = ($page - 1) * $rows_per_page;
 
-// Query per recuperare i dati richiesti
-$sql = "SELECT id, denominazione, id_comune, id_distretto, id_asl 
-        FROM convenzionati 
+// Verifica se è stata effettuata una ricerca
+$search = isset($_GET['search']) ? $conn->real_escape_string($_GET['search']) : '';
+
+// Query per ottenere i dati con il filtro di ricerca e la paginazione
+$sql = "SELECT DISTINCT 
+            c.id AS id, 
+            c.denominazione AS denominazione_centro, 
+            comuni.descrizione AS comune_descrizione, 
+            distretti.denominazione AS distretto_denominazione, 
+            asl.denominazione AS asl_denominazione 
+        FROM convenzionati c
+        LEFT JOIN comuni ON c.id_comune = comuni.id
+        LEFT JOIN distretti ON c.id_distretto = distretti.id
+        LEFT JOIN asl ON c.id_asl = asl.id
+        WHERE c.denominazione LIKE '%$search%' 
         LIMIT $start_from, $rows_per_page";
+
 $result = $conn->query($sql);
 
-// Conteggio totale delle righe per la paginazione
-$total_sql = "SELECT COUNT(*) AS total FROM convenzionati";
+// Calcola il numero totale di righe basato sulla ricerca
+$total_sql = "SELECT COUNT(DISTINCT c.id) AS total 
+              FROM convenzionati c
+              LEFT JOIN comuni ON c.id_comune = comuni.id
+              LEFT JOIN distretti ON c.id_distretto = distretti.id
+              LEFT JOIN asl ON c.id_asl = asl.id
+              WHERE c.denominazione LIKE '%$search%'";
+
 $total_result = $conn->query($total_sql);
-$total_rows = $total_result->fetch_assoc()['total'];
-$total_pages = ceil($total_rows / $rows_per_page);
+$total_rows = $total_result->fetch_assoc()['total']; // Numero totale di righe
+$total_pages = ceil($total_rows / $rows_per_page); // Calcolo del numero totale di pagine
+
 ?>
 
 <!DOCTYPE html>
 <html lang="it">
-
 <head>
-    <?php include('./includes/header.php'); ?>
+    <?php include './includes/header.php'; ?>
     <title>Gestione Convenzionati</title>
 </head>
-
 <body>
-    <?php include('./includes/navbar.php'); ?>
+    <?php include './includes/navbar.php'; ?>
 
     <h2 class="text-center py-5 m-0 text-white" style="background-color: #17334F;">Anagrafiche Struttura Erogatrice</h2>
     <div class="container mt-4">
@@ -50,7 +68,7 @@ $total_pages = ceil($total_rows / $rows_per_page);
             </div>
         </form>
 
-        <div class="table-responsive shadow-sm rounded">
+        <div class="table-responsive rounded">
             <table class="table table-bordered table-striped table-hover">
                 <thead class="table-dark">
                     <tr>
@@ -63,28 +81,17 @@ $total_pages = ceil($total_rows / $rows_per_page);
                     </tr>
                 </thead>
                 <tbody>
-                    <?php
-                    // Verifica se è stata effettuata una ricerca
-                    $search = isset($_GET['search']) ? $conn->real_escape_string($_GET['search']) : '';
-
-                    // Modifica la query per includere la ricerca
-                    $sql = "SELECT id, denominazione, id_comune, id_distretto, id_asl 
-                            FROM convenzionati 
-                            WHERE denominazione LIKE '%$search%'
-                            LIMIT $start_from, $rows_per_page";
-                    $result = $conn->query($sql);
-
-                    if ($result->num_rows > 0): ?>
+                    <?php if ($result->num_rows > 0): ?>
                         <?php while ($row = $result->fetch_assoc()): ?>
                             <tr>
                                 <td class="text-center">
                                     <input type="radio" name="selected_row" value="<?php echo $row['id']; ?>">
                                 </td>
                                 <td class="text-center"><?php echo htmlspecialchars($row['id']); ?></td>
-                                <td><?php echo htmlspecialchars($row['denominazione']); ?></td>
-                                <td class="text-center"><?php echo htmlspecialchars($row['id_comune']); ?></td>
-                                <td class="text-center"><?php echo htmlspecialchars($row['id_distretto']); ?></td>
-                                <td class="text-center"><?php echo htmlspecialchars($row['id_asl']); ?></td>
+                                <td title="<?php echo htmlspecialchars($row['denominazione_centro']); ?>"><?php echo htmlspecialchars($row['denominazione_centro']); ?></td>
+                                <td class="text-center"><?php echo htmlspecialchars($row['comune_descrizione']); ?></td>
+                                <td class="text-center"><?php echo htmlspecialchars($row['distretto_denominazione']); ?></td>
+                                <td class="text-center"><?php echo htmlspecialchars($row['asl_denominazione']); ?></td>
                             </tr>
                         <?php endwhile; ?>
                     <?php else: ?>
@@ -144,7 +151,6 @@ $total_pages = ceil($total_rows / $rows_per_page);
                 </ul>
             </nav>
 
-
             <!-- Pulsanti CRUD -->
             <div class="d-flex justify-content-center align-items-center gap-2">
                 <button class="btn btn-info" onclick="visualizza()">Visualizza</button>
@@ -187,10 +193,8 @@ $total_pages = ceil($total_rows / $rows_per_page);
         }
     </script>
 </body>
-
 </html>
 
 <?php
-// Chiudi la connessione
 $conn->close();
 ?>
