@@ -55,14 +55,14 @@ session_start();
             </div>
             <div class="modal-body">
                 <ul class="list-unstyled">
-                    <li><a href="#" class="d-block text-dark text-decoration-none pb-2 border-bottom border-1">Caricamento Flusso M</a></li>
-                    <li><a href="#" class="d-block text-dark text-decoration-none pb-2 border-bottom border-1">Approva Flussi M</a></li>
-                    <li><a href="#" class="d-block text-dark text-decoration-none pb-2 border-bottom border-1">Situazione Flussi M</a></li>
-                    <li><a href="#" class="d-block text-dark text-decoration-none pb-2 border-bottom border-1">Liquida Flussi M</a></li>
-                    <li><a href="#" class="d-block text-dark text-decoration-none pb-2 border-bottom border-1">Approva Liquidazioni</a></li>
-                    <li><a href="#" class="d-block text-dark text-decoration-none pb-2 border-bottom border-1">Pubblica Liquidazioni</a></li>
-                    <li><a href="#" class="d-block text-dark text-decoration-none pb-2 border-bottom border-1">Approva Ruolo</a></li>
-                    <li><a href="#" class="d-block text-dark text-decoration-none pb-2 border-bottom border-1">Ricette</a></li>
+                    <li><a href="#" class="d-block text-dark text-decoration-none pb-2">Caricamento Flusso M</a></li>
+                    <li><a href="#" class="d-block text-dark text-decoration-none pb-2">Approva Flussi M</a></li>
+                    <li><a href="#" class="d-block text-dark text-decoration-none pb-2">Situazione Flussi M</a></li>
+                    <li><a href="#" class="d-block text-dark text-decoration-none pb-2">Liquida Flussi M</a></li>
+                    <li><a href="#" class="d-block text-dark text-decoration-none pb-2">Approva Liquidazioni</a></li>
+                    <li><a href="#" class="d-block text-dark text-decoration-none pb-2">Pubblica Liquidazioni</a></li>
+                    <li><a href="#" class="d-block text-dark text-decoration-none pb-2">Approva Ruolo</a></li>
+                    <li><a href="#" class="d-block text-dark text-decoration-none pb-2">Ricette</a></li>
                     <li><a href="#" class="d-block text-dark text-decoration-none pb-2">Reportistica</a></li>
                 </ul>
             </div>
@@ -79,7 +79,7 @@ session_start();
             </div>
             <div class="modal-body">
                 <ul class="list-unstyled">
-                    <li><a href="#" class="d-block text-dark text-decoration-none pb-2 border-bottom border-1">Lista Utenti</a></li>
+                    <li><a href="#" class="d-block text-dark text-decoration-none pb-2">Lista Utenti</a></li>
                     <li><a href="#" class="d-block text-dark text-decoration-none pb-2">Aggiungi Utente</a></li>
                 </ul>
             </div>
@@ -96,14 +96,21 @@ session_start();
             </div>
             <div class="modal-body">
                 <ul class="list-unstyled">
-                    <li><a href="#" class="d-block text-dark text-decoration-none pb-2 border-bottom border-1">Tabella Nazioni</a></li>
-                    <li><a href="#" class="d-block text-dark text-decoration-none pb-2 border-bottom border-1">Tabella Regioni</a></li>
-                    <li><a href="#" class="d-block text-dark text-decoration-none pb-2 border-bottom border-1">Tabella Province</a></li>
-                    <li><a href="#" class="d-block text-dark text-decoration-none pb-2 border-bottom border-1">Tabella Comuni</a></li>
-                    <li><a href="#" class="d-block text-dark text-decoration-none pb-2 border-bottom border-1">Tabella A.S.L.</a></li>
-                    <li><a href="#" class="d-block text-dark text-decoration-none pb-2 border-bottom border-1">Tabella Distretti</a></li>
-                    <li><a href="#" class="d-block text-dark text-decoration-none pb-2 border-bottom border-1">Tabella Medici</a></li>
+                    <li><a href="#" class="d-block text-dark text-decoration-none pb-2">Tabella Nazioni</a></li>
+                    <li><a href="#" class="d-block text-dark text-decoration-none pb-2">Tabella Regioni</a></li>
+                    <li><a href="#" class="d-block text-dark text-decoration-none pb-2">Tabella Province</a></li>
+                    <li><a href="#" class="d-block text-dark text-decoration-none pb-2">Tabella Comuni</a></li>
+                    <li><a href="#" class="d-block text-dark text-decoration-none pb-2">Tabella A.S.L.</a></li>
+                    <li><a href="#" class="d-block text-dark text-decoration-none pb-2 border-bottom border-2">Tabella Distretti</a></li>
+                    <li><a href="#" class="d-block text-dark text-decoration-none pb-2">Tabella Medici</a></li>
                     <li><a href="#" class="d-block text-dark text-decoration-none pb-2">Tabella Branche</a></li>
+                    <li><a href="#" class="d-block text-dark text-decoration-none pb-2">Tabella Diagnosi</a></li>
+                    <li><a href="#" class="d-block text-dark text-decoration-none pb-2">Tabella Esenzioni</a></li>
+                    <li><a href="#" class="d-block text-dark text-decoration-none pb-2">Tabella Prestazioni</a></li>
+                    <li><a href="#" class="d-block text-dark text-decoration-none pb-2">Tabella Tariffe</a></li>
+                    <li><a href="#" class="d-block text-dark text-decoration-none pb-2 border-bottom border-2">Tabella Causali</a></li>
+                    <li><a href="#" class="d-block text-dark text-decoration-none pb-2">Tabella Errori</a></li>
+                    <li><a href="#" class="d-block text-dark text-decoration-none pb-2">Tabella News</a></li>
                 </ul>
             </div>
         </div>
@@ -119,8 +126,8 @@ session_start();
             </div>
             <div class="modal-body">
                 <ul class="list-unstyled">
-                    <li><a href="#" class="d-block text-dark text-decoration-none pb-2 border-bottom border-1">Download Utili</a></li>
-                    <li><a href="#" class="d-block text-dark text-decoration-none pb-2 border-bottom border-1">Contatti</a></li>
+                    <li><a href="#" class="d-block text-dark text-decoration-none pb-2">Download Utili</a></li>
+                    <li><a href="#" class="d-block text-dark text-decoration-none pb-2">Contatti</a></li>
                     <li><a href="#" class="d-block text-dark text-decoration-none pb-2">Cambio Password</a></li>
                 </ul>
             </div>
