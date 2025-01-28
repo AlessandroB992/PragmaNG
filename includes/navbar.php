@@ -1,9 +1,11 @@
 <?php
-session_start(); // Avvia la sessione
+
+session_start();
+
 ?>
 
 <head>
-    <?php include('../includes/header.php'); ?>
+    <?php include('header.php'); ?>
 </head>
 
 <nav class="navbar navbar-expand-lg py-3">
@@ -15,13 +17,13 @@ session_start(); // Avvia la sessione
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav me-auto">
                 <li class="nav-item">
-                    <a class="btn btn-light p-2 mx-1" href="<?php echo isset($_SESSION['user_id']) ? '/home.php' : '/index.php'; ?>">Home</a>
+                    <a class="btn btn-light p-2 mx-1" href="<?php echo isset($_SESSION['user_id']) ? '/home' : '/'; ?>">Home</a>
                 </li>
 
                 <!-- Link "Gestione Convenzionati" visibile solo se l'utente è loggato -->
                 <?php if (isset($_SESSION['user_id'])): ?>
                     <li class="nav-item">
-                        <a class="btn btn-light p-2 mx-1" href="/convenzionati/gestione_convenzionati.php">Gestione Convenzionati</a>
+                        <a class="btn btn-light p-2 mx-1" href="../convenzionati">Gestione Convenzionati</a>
                     </li>
                     <!-- Dropdown "Flusso M" -->
                     <li class="nav-item dropdown">
@@ -96,11 +98,11 @@ session_start(); // Avvia la sessione
                         <span class="navbar-text text-white mx-2"><?php echo $_SESSION['user_id']; ?></span>
                     </li>
                     <li class="nav-item">
-                        <a class="btn btn-danger p-2 mx-1" href="../../logout.php">Logout</a>
+                        <a class="btn btn-danger p-2 mx-1" href="/logout">Logout</a>
                     </li>
                 <?php else: ?>
                     <li class="nav-item">
-                        <a class="btn btn-light p-2 mx-1" href="../../index.php">Login</a>
+                        <a class="btn btn-light p-2 mx-1" href="/">Login</a>
                     </li>
                 <?php endif; ?>
             </ul>

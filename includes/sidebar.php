@@ -1,5 +1,7 @@
 <?php
-session_start(); // Avvia la sessione
+
+session_start();
+
 ?>
 <div class="d-flex">
     <!-- Sidebar -->
@@ -9,12 +11,12 @@ session_start(); // Avvia la sessione
         </div>
         <ul class="sideOptions nav flex-column">
             <li class="nav-item mb-2">
-                <a class="btn btn-light w-100 text-start" href="<?php echo isset($_SESSION['user_id']) ? 'home.php' : 'index.php'; ?>">Home</a>
+                <a class="btn btn-light w-100 text-start" href="<?php echo isset($_SESSION['user_id']) ? '/home' : 'index.php'; ?>">Home</a>
             </li>
 
             <?php if (isset($_SESSION['user_id'])): ?>
                 <li class="nav-item mb-2">
-                    <a class="btn btn-light w-100 text-start" href="./convenzionati/gestione_convenzionati.php">Gestione Convenzionati</a>
+                    <a class="btn btn-light w-100 text-start" href="../convenzionati">Gestione Convenzionati</a>
                 </li>
 
                 <!-- Dropdown con modali -->
@@ -37,7 +39,7 @@ session_start(); // Avvia la sessione
         <?php if (isset($_SESSION['user_id'])): ?>
             <div class="logout d-flex flex-column">
                 <span class="d-block text-secondary text-center text-white my-2"><?php echo $_SESSION['user_id']; ?></span>
-                <a class="btn btn-danger w-100" href="logout.php">Logout</a>
+                <a class="btn btn-danger w-100" href="/logout">Logout</a>
             </div>
         <?php endif; ?>
     </nav>
@@ -127,4 +129,4 @@ session_start(); // Avvia la sessione
 </div>
 
 <!-- Bootstrap JS -->
-<script src="bootstrap-italia/js/bootstrap-italia.bundle.min.js"></script>
+<script src="/bootstrap-italia/js/bootstrap-italia.bundle.min.js"></script>

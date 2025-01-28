@@ -3,7 +3,7 @@ session_start();
 
 // Verifica se l'utente è loggato
 if (!isset($_SESSION['user_id'])) {
-    header("Location: index.php");
+    header("Location: /");
     exit();
 }
 
@@ -34,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             VALUES ('$id_convenzionato', '$denominazione_centro', '$indirizzo', '$cap', '$comune', '$tipo_convenzione', '$codice_fiscale', '$partita_iva', '$mail', '$pec', '$telefono', '$fax', '$id_distretto')";
 
     if ($conn->query($sql) === TRUE) {
-        header("Location: gestione_convenzionati.php");
+        header("Location: /convenzionati");
         exit();
     } else {
         $error_message = "Errore nell'inserimento: " . $conn->error;
@@ -127,7 +127,7 @@ $distretti_result = $conn->query($distretti_sql);
                     </div>
                 </div>
             </div>
-            <div class="d-flex justify-content-between"> <a href="../gestione_convenzionati.php" class="btn btn-secondary">⬅ Torna Indietro</a>
+            <div class="d-flex justify-content-between"> <a href="/convenzionati" class="btn btn-secondary">⬅ Torna Indietro</a>
                 <button type="submit" class="btn btn-success" style="background-color: #17334F;">Inserisci</button>
             </div>
 

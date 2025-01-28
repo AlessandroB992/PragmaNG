@@ -6,7 +6,7 @@ $error_message = "";
 
 // Se l'utente è già loggato, reindirizza direttamente alla home
 if (isset($_SESSION['user_id'])) {
-    header("Location: home.php");
+    header("Location: /home");
     exit();
 }
 
@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $_SESSION['user_id'] = $email;  // Puoi anche usare un ID numerico o altro
 
         // Reindirizza l'utente alla home
-        header("Location: home.php");
+        header("Location: /home");
         exit();
     } else {
         // Imposta il messaggio di errore

@@ -3,7 +3,7 @@ session_start();
 
 // Verifica se l'utente è loggato
 if (!isset($_SESSION['user_id'])) {
-    header("Location: index.php");
+    header("Location: /");
     exit();
 }
 
@@ -151,7 +151,7 @@ $convenzioni_result = $conn->query($convenzioni_sql);
                 </tbody>
             </table>
         </div>
-        <a href="../gestione_convenzionati.php" class="btn btn-secondary my-3">Torna alla lista</a>
+        <a href="/convenzionati" class="btn btn-secondary my-3">Torna alla lista</a>
     </div>
 </body>
 

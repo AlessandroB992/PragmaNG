@@ -3,7 +3,7 @@ session_start();
 
 // Verifica se l'utente è loggato
 if (!isset($_SESSION['user_id'])) {
-    header("Location: index.php");
+    header("Location: /");
     exit();
 }
 
@@ -173,11 +173,9 @@ while ($row = $comuni_result->fetch_assoc()) {
                         <?php endwhile; ?>
                     </select>
                 </div>
-
-                <div class="col-12">
-                    <button type="submit" class="btn btn-success" style="background-color: #17334F;">Salva Modifiche</button>
-                    <a href="../gestione_convenzionati.php" class="btn btn-secondary">Indietro</a>
-                </div>
+                <div class="d-flex justify-content-between"> <a href="/convenzionati" class="btn btn-secondary">⬅ Torna Indietro</a>
+                <button type="submit" class="btn btn-success" style="background-color: #17334F;">Salva</button>
+            </div>
             </form>
         <?php endif; ?>
     </div>
